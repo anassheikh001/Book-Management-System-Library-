@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Librarian</title>
+    <link rel="icon" href="https://i.pinimg.com/236x/df/b5/be/dfb5be8b2de8d90129acd47257aff6bb.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="addlibrarian.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" id="checkbtn"><i class="fa fa-bars"></i></label>
+        <label class="logo">eLibrary</label>
+        <ul>
+            <li><a href="adminsection.html">Back to Admin Section</a></li>
+            <li><a href="index.html">Admin Login</a></li>
+            <li><a href="index.html">Librarian Login</a></li>
+            <li><a href="index.html">log out</a></li>
+        </ul>
+    </nav>
+    <div class="forms-container">
+        <form class="form" action="addlibrarain" method="post"> 
+            <h2 class="headings">Add Librarian</h2>
+            <div class="form-items">
+                <label class="label">Username:</label>
+                <input class="input" type="text" placeholder="Username" name="t1" required/>
+            </div>
+            <div class="form-items">
+                <label class="label">E-mail ID:</label>
+                <input class="input" type="email" placeholder="e-mail address" name="t2" required/>
+            </div> 
+            <div class="form-items">
+                <label class="label">Password:</label>
+                <input class="input" type="password" placeholder="Password" name="t3" required/>
+            </div>
+            <div class="form-items">
+                <label class="label">Mobile Number:</label>
+                <input class="input" type="number" placeholder="mobile number" name="t4" required/>
+            </div>
+            <input class="submitbtn" type="submit" name="Login" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

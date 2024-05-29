@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issue Book</title>
+    <link rel="icon" href="https://i.pinimg.com/236x/df/b5/be/dfb5be8b2de8d90129acd47257aff6bb.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="issuebook.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" id="checkbtn"><i class="fa fa-bars"></i></label>
+        <label class="logo">eLibrary</label>
+        <ul>
+            <li><a href="librariansection.html">Back to Librarian Section</a></li>
+            <li><a href="addbook.html">add Book</a></li>
+            <li><a href="viewBooks">view book</a></li>
+<!--            <li><a href="issuebook.html">issue book</a></li>-->
+            <li><a href="viewissuedBooks">view issued book</a></li>
+            <li><a href="returnbook.html">return book</a></li>
+            <li><a href="index.html">log out</a></li>
+
+        </ul>
+    </nav>
+    <div class="forms-container">
+        <form class="form" action="issueBook" method="post"> 
+            <h2 class="headings">Issue Book</h2>
+            <div class="form-items">
+                <label class="label">Book Callno:</label>
+                <input class="input" type="text" placeholder="book callno." name="t1" required>
+            </div>
+            <div class="form-items">
+                <label class="label">Student Id:</label>
+                <input class="input" type="text" placeholder="student id"  name="t2" required>
+            </div>
+            <div class="form-items">
+                <label class="label">Student Name:</label>
+                <input class="input" type="text" placeholder="student's name" name="t3" required>
+            </div>
+            <div class="form-items">
+                <label class="label">Student Mobile No.:</label>
+                <input class="input" type="text" placeholder="student's mobile no." name="t4" required>
+            </div> 
+            <input class="submitbtn" type="submit" name="Login" value="Issue Book">
+        </form>
+    </div>
+</body>
+</html>
