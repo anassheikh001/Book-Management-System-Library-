@@ -8,23 +8,39 @@ public class viewLibrarian extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         try {
-            out.println("<body><center><h1>List of Librarian</h1><table border='2'><br><br><br>");
-            out.println("<thead><td>Name</td><td>Email</td></thead>");
+            out.println("<html><head><style>");
+            out.println("body { font-family: Arial, sans-serif; }");
+            out.println("table { width: 80%; border-collapse: collapse; margin-top: 20px; }");
+            out.println("table, th, td { border: 1px solid #ddd; }");
+            out.println("th, td { padding: 10px; text-align: left; }");
+            out.println("thead { background-color: #f2f2f2; }");
+            out.println("button { background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-top: 20px; border: none; cursor: pointer; }");
+            out.println("button:hover { background-color: #45a049; }");
+            out.println("</style></head><body><center>");
+            out.println("<h1>List of Librarians</h1>");
+            out.println("<table border='2'>");
+            out.println("<thead><tr><th>Name</th><th>Email</th></tr></thead>");
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/elibrary?useTimeZone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false", "root", "root");
-            PreparedStatement ps = con.prepareStatement("SELECT* FROM librarian");
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM librarian");
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                out.println("<tr><td>" +rs.getString(1) + "</td><td>" + rs.getString(2) + "</td></tr>");
+            
+            while(rs.next()) {
+                out.println("<tr><td>" + rs.getString(1) + "</td><td>" + rs.getString(2) + "</td></tr>");
             }
+            
             out.println("</table>");
+            
+            // Add anchor tag for home page
             out.println("<br><br><a href=\"adminsection.html\"><button>Go Back to Home</button></a>");
+            
             ps.close();
             con.close();
-        }
-        catch(Exception e) {
+        } catch(Exception e) {
             out.println(e);
         }
+        out.println("</center></body></html>");
         out.close();
     }
 }
